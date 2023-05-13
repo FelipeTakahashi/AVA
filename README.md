@@ -1,1 +1,1 @@
-Exercícios do professor no AVA 
+Exercícios de programação enviados no AVA
