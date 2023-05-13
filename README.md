@@ -1,2 +1,1 @@
-# ava
-Exercícios do AVA
+Exercícios do professor no AVA 
