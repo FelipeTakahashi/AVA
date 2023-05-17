@@ -17,27 +17,28 @@ void setup() {
 }
 
 void loop() {
-  // Vermelho pra carro
-  digitalWrite(ledGreenP, HIGH);
-  digitalWrite(ledRed, HIGH);
+  // Verde pra carro
+  digitalWrite(ledRedP, HIGH);
+  digitalWrite(ledGreen, HIGH);
   	delay(t1);
   
-  digitalWrite(ledGreenP, LOW);
-  digitalWrite(ledRed, LOW); 
+  digitalWrite(ledRedP, LOW);
+  digitalWrite(ledGreen, LOW); 
   	delay(t3);
   
   // Amarelo
+  digitalWrite(ledRedP, HIGH);
   digitalWrite(ledYellow, HIGH); 
   	delay(t2); 
   digitalWrite(ledYellow, LOW); 
   	delay(t3);
   
-  // Verde pra carro
-  digitalWrite(ledRedP, HIGH);
-  digitalWrite(ledGreen, HIGH); 
+  // Vermelho pra carro
+  digitalWrite(ledGreenP, HIGH);
+  digitalWrite(ledRed, HIGH); 
   	delay(t1);
   
-  digitalWrite(ledRedP, LOW);
-  digitalWrite(ledGreen, LOW);    
+  digitalWrite(ledGreenP, LOW);
+  digitalWrite(ledRed, LOW);    
   	delay(t3);
 }
