@@ -1,43 +1,16 @@
-every_x = []
-every_y = []
+x, y, u, v = [], [], [], []
 
-for _ in range(int(input())):
-    coordinates = [int(a) for a in input().split()]
-    for i in range(len(coordinates)):
-        if i % 2 == 0:
-            every_x.append(coordinates[i])
-        else:
-            every_y.append(coordinates[i])
+for i in range(int(input())):
+    upper_x, upper_y, lower_x, lower_y = map(int, input().split())
 
-upper_left_x = []
-upper_left_y = []
+    x.append(upper_x)
+    y.append(upper_y)
+    u.append(lower_x)
+    v.append(lower_y)
 
-bottom_right_x = []
-bottom_right_y = []
+x = sorted(x)
+y = sorted(y)
+u = sorted(u)
+v = sorted(v)
 
-for i in range(len(every_x)):
-    if i % 2 == 0:
-        upper_left_x.append(every_x[i])
-    else:
-        bottom_right_x.append(every_x[i])
-
-for i in range(len(every_y)):
-    if i % 2 == 0:
-        upper_left_y.append(every_y[i])
-    else:
-        bottom_right_y.append(every_y[i])
-
-upper_x = max(upper_left_x)
-upper_y = max(upper_left_y)
-
-bottom_x = min(bottom_right_x)
-bottom_y = min(bottom_right_y)
-
-print(every_x)
-print(every_y)
-
-print(upper_x, upper_y)
-print(bottom_x, bottom_y)
-
-print(upper_left_x, upper_left_y)
-print(bottom_right_x, bottom_right_y)
+print((x[-1], y[0], u[0], v[-1]) if (x[-1] < u[0] and v[-1] < y[0]) else "nenhum" )
