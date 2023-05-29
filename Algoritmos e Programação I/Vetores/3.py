@@ -8,4 +8,4 @@ for index in range(len(vector)):
         print(f"{find} found at index: {index}")
 
 if not found:
-    print("-1")
+    print(-1)
