@@ -23,6 +23,7 @@ int ContaLinhasNulas(int n, int m, int M[MAX][MAX]) {
 }
 
 int ContaColunasNulas(int n, int m, int M[MAX][MAX]. int &colCount) {
+    int colCount = 0, total = 0;
     for (int col = 0; col < m; ++col) {
         for (int row = 0; row < n; ++row) {
             total += M[row][col];
@@ -36,7 +37,7 @@ int ContaColunasNulas(int n, int m, int M[MAX][MAX]. int &colCount) {
 int main() {
     int n, m, M[MAX][MAX], rowCount = 0, colCount = 0, total = 0;
         scanf("%d %d", &n, &m);
-            M[MAX][MAX] = LeMatriz();
+            M[MAX][MAX] = LeMatriz(n, m, M[MAX][MAX]);
                 rowCount = ContaLinhasNulas(n, m, M[MAX][MAX]);
                 colCount = ContaLinhasNulas(n, m, M[MAX][MAX], colCount);
                 
