@@ -226,6 +226,67 @@ void searchAndInsert(node *list, int element, int beforeWho) {
     q->next = insert;
 }
 
+void push(node* &list, int element) {
+    node *p;
+    p = (node*)malloc(sizeof(node));
+    p->id = element;
+    p->next = list->next;
+    list->next = p;
+}
+
+// void insert(node* &list, int element) {
+//     node *p, *q;
+//     p = (node*)malloc(sizeof(node));
+//     for(q = list; q == NULL; q = q->next) {
+//         if (q->next == NULL) {
+            
+//         }
+//     }
+// }
+
+int pop(node* &list) {
+    node *p;
+    int item;
+
+    if(list == NULL) return -1;
+
+    item = list->id;
+    p = list;
+    list = list->next;
+    free(p);
+
+    return item;
+} 
+
+int countNodes(node *list) {
+    int nodeCounter = 0;
+    for(node *p = list; p != NULL; p = p->next) 
+        nodeCounter++;
+
+    return nodeCounter;
+}
+
+void recursiveStackPrint(node *list) {
+    if (list != NULL) {
+        printf("%d ", list->id);
+        recursivePrint(list);
+    }
+}
+
+void reverseStackPrint(node *list) {
+    if (list->next != NULL) {
+        recursivePrint(list);
+        print("%d ", list->id);
+    }
+}
+
+node* reverseStack(node* stack) {
+    node *p, *reversed = NULL;
+    for(p = list; p != NULL; p = p->next) push(reversed, p->id);
+    stack = reversed;
+    return stack;
+}
+
 int main() {
     node *headless;
     headless = (node*)malloc(sizeof (node));
